@@ -22,7 +22,23 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+# Allow Mongoid to have ActiveRecord like Enum type of Mapping
+
+#=> OrderDelivery.rb Model
+include Mongoid::EnumMapper
+define_enum :status, { pending: 0, shipping: 1 }
+
+# Examples
+od = OrderDelivery.find(id)
+od.status             #=> :pending
+od.status = :shipping #=> :shipping
+od.save
+od.status             #=> :shipping
+od[:status]           #=> 1
+od.status = :invalid  #=> :invalid
+od.status             #=> :shipping
+```
 
 ## Development
 
