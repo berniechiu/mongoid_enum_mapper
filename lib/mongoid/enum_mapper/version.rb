@@ -1,3 +1,5 @@
-module MongoidEnumMapper
-  VERSION = "0.1.0"
+module Mongoid
+  module EnumMapper
+    VERSION = "0.1.0"
+  end
 end

@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "mongoid_enum_mapper/version"
+require "mongoid/enum_mapper/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "mongoid_enum_mapper"
-  spec.version       = MongoidEnumMapper::VERSION
+  spec.version       = Mongoid::EnumMapper::VERSION
   spec.authors       = ["Bernie Chiu"]
   spec.email         = ["bernie_chiu@hotmail.com"]
 

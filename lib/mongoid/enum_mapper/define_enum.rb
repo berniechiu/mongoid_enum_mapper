@@ -1,8 +1,5 @@
-require "mongoid/enum_mapper/version"
-require "mongoid/enum_mapper/define_enum"
-
 module Mongoid
-  module MongoidEnumMapper
+  module EnumMapper
     extend ActiveSupport::Concern
 
     def self.included(base)
