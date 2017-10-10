@@ -1,3 +1,7 @@
+[![Maintainability](https://api.codeclimate.com/v1/badges/919d0459a7ffdfa9a221/maintainability)](https://codeclimate.com/github/berniechiu/mongoid_enum_mapper/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/919d0459a7ffdfa9a221/test_coverage)](https://codeclimate.com/github/berniechiu/mongoid_enum_mapper/test_coverage)
+[![Build Status](https://travis-ci.org/berniechiu/mongoid_enum_mapper.svg?branch=master)](https://travis-ci.org/berniechiu/mongoid_enum_mapper)
+
 # Mongoid Enum Mapper
 
 Inspired by [ActiveRecord::Enum](http://api.rubyonrails.org/v5.1/classes/ActiveRecord/Enum.html), the library supports a lightweight solution to map enum key value
