@@ -1,8 +1,6 @@
-# MongoidEnumMapper
+# Mongoid Enum Mapper
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/mongoid_enum_mapper`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Inspired by `ActiveRecord::Enum`, the library supports a lightweight solution to map enum key value
 
 ## Installation
 
@@ -27,13 +25,12 @@ Or install it yourself as:
 
 #=> OrderDelivery.rb Model
 include Mongoid::EnumMapper
-define_enum :status, { pending: 0, shipping: 1 }
+define_enum :status, { pending: 0, shipping: 1, shipped: 2 }
 
 # Examples
-od = OrderDelivery.find(id)
+od = OrderDelivery.new
 od.status             #=> :pending
 od.status = :shipping #=> :shipping
-od.save
 od.status             #=> :shipping
 od[:status]           #=> 1
 od.status = :invalid  #=> :invalid
@@ -48,7 +45,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/mongoid_enum_mapper.
+Bug reports and pull requests are welcome on GitHub at https://github.com/berniechiu/mongoid_enum_mapper.
 
 ## License
 
