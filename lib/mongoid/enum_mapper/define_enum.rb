@@ -17,7 +17,7 @@ module Mongoid
         end
 
         define_method(:"#{enum_field}=") do |key|
-          return self[enum_field] if enum_mapping[key].empty?
+          return self[enum_field] unless enum_mapping[key]
           instance_variable_set(enum_value, nil) # clean mapping cache
           self[enum_field] = enum_mapping[key]
         end
