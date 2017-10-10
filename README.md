@@ -1,6 +1,6 @@
 # Mongoid Enum Mapper
 
-Inspired by `ActiveRecord::Enum`, the library supports a lightweight solution to map enum key value
+Inspired by [ActiveRecord::Enum](http://api.rubyonrails.org/v5.1/classes/ActiveRecord/Enum.html), the library supports a lightweight solution to map enum key value
 
 ## Installation
 
