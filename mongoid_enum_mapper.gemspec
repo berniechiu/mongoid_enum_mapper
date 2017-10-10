@@ -9,9 +9,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Bernie Chiu"]
   spec.email         = ["bernie_chiu@hotmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{This library supports a lightweight enum suger for Mongoid field.}
+  spec.description   = %q{Enum mapper for Mongoid field}
+  spec.homepage      = "https://github.com/berniechiu/mongoid_enum_mapper"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
