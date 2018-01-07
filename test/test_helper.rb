@@ -8,5 +8,4 @@ require 'enum_mapper'
 
 # Test models
 require 'models/order_delivery'
-
 require 'minitest/autorun'
