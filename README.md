@@ -33,12 +33,19 @@ define_enum :status, { pending: 0, shipping: 1, shipped: 2 }
 
 # Examples
 od = OrderDelivery.new
-od.status             #=> :pending
+od.status             #=> Default :pending
 od.status = :shipping #=> :shipping
 od.status             #=> :shipping
 od[:status]           #=> 1
+
 od.status = :invalid  #=> :invalid
 od.status             #=> :shipping
+
+od.update(status: :pending)
+od.status             #=> :pending
+
+OrderDelivery::STATUS #=> { pending: 0, shipping: 1, shipped: 2 }
+OrderDelivery.update_all(OrderDelivery::STATUS[:shipping])
 ```
 
 ## Development
