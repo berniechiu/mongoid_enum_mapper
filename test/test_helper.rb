@@ -4,6 +4,7 @@ require "simplecov"
 SimpleCov.start
 
 require 'mongoid'
+require 'configuration'
 require 'enum_mapper'
 
 # Test models
