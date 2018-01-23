@@ -1,4 +1,3 @@
-require 'pry'
 module Mongoid
   module EnumMapper
     extend ActiveSupport::Concern
