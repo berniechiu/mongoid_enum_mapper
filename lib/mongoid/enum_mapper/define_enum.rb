@@ -20,9 +20,7 @@ module Mongoid
           enum_status ? (self[enum_field] = enum_status) : self[enum_field]
         else
           # Reset all enum field
-          self.class.instance_variable_get(:'@current_enums').each do |field|
-            reset_enum_mapping_cache(enum_field: field)
-          end
+          self.class.current_enums.each { |field| reset_enum_mapping_cache(enum_field: field) }
         end
       end
 
@@ -31,9 +29,12 @@ module Mongoid
       end
     end
 
-    class_methods do
+    module ClassMethods
+      attr_reader :current_enums
+
       def define_enum(enum_field, enum_mapping = {})
         field :"#{enum_field}", type: Integer, default: 0
+
         set_enum_mapping_constant(enum_field, enum_mapping)
         set_current_enum_fields(enum_field)
 
