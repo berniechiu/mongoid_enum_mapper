@@ -15,15 +15,19 @@ module Mongoid
           # Reset certain enum field
           enum_mapper = self.class.const_get(enum_field.to_s.upcase)
           key ||= enum_mapper.key(self[:"#{enum_field}"])  # If key not found, grep from current db value
-          return self[enum_field] unless enum_mapper[key]
-          instance_variable_set(:"@#{enum_field}", nil) if self.status != enum_mapper[key]
-          self[enum_field] = enum_mapper[key]
+          enum_status = enum_mapper[key]
+          reset_enum_instance_cache(enum_field, status: enum_status)
+          enum_status ? (self[enum_field] = enum_status) : self[enum_field]
         else
           # Reset all enum field
           self.class.instance_variable_get(:'@current_enums').each do |field|
             reset_enum_mapping_cache(enum_field: field)
           end
         end
+      end
+
+      def reset_enum_instance_cache(field, status: nil)
+        instance_variable_set(:"@#{field}", nil) if self.status != status
       end
     end
 
