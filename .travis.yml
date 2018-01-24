@@ -10,6 +10,7 @@ rvm:
   - 2.5
 gemfile:
   - gemfiles/mongoid_40.gemfile
+cache: bundler
 services:
   - mongodb
 before_install:
