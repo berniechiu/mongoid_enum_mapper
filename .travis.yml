@@ -9,7 +9,31 @@ rvm:
   - 2.4
   - 2.5
 gemfile:
+  - gemfiles/mongoid_61.gemfile
+  - gemfiles/mongoid_60.gemfile
+  - gemfiles/mongoid_51.gemfile
+  - gemfiles/mongoid_50.gemfile
   - gemfiles/mongoid_40.gemfile
+matrix:
+  exclude:
+    - rvm: 2.5
+      gemfile: gemfiles/mongoid_51.gemfile
+    - rvm: 2.5
+      gemfile: gemfiles/mongoid_50.gemfile
+    - rvm: 2.5
+      gemfile: gemfiles/mongoid_40.gemfile
+    - rvm: 2.4
+      gemfile: gemfiles/mongoid_51.gemfile
+    - rvm: 2.4
+      gemfile: gemfiles/mongoid_50.gemfile
+    - rvm: 2.4
+      gemfile: gemfiles/mongoid_40.gemfile
+    - rvm: 2.1
+      gemfile: gemfiles/mongoid_61.gemfile
+    - rvm: 2.0
+      gemfile: gemfiles/mongoid_61.gemfile
+    - rvm: 2.1
+      gemfile: gemfiles/mongoid_60.gemfile
 cache: bundler
 services:
   - mongodb
